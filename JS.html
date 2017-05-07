@@ -1,72 +1,51 @@
-<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Javascript sanbox code</title>
-    <script>
-        
-        
-            //onload
-         window.onload = function () {
-            document.getElementById('img').innerHTML = "done loading";
-        
-            //onclick
-        document.getElementById('button').onclick = function () {
-                document.getElementById('out').innerHTML = "onclick used correctly";
-            }
-            //ontouch
-        document.getElementById('photo').ontouchstart = function () {
-                document.getElementById('div2').innerHTML = 'touch started';
-            }
-        document.getElementById('photo').ontouchmove = function () {
-                document.getElementById('div2').innerHTML = 'touch moving';
-            }
-        document.getElementById('photo').ontouchend = function () {
-                document.getElementById('div2').innerHTML = 'touch ended';
-            }
-        document.getElementById('photo').ontouchcancel = function () {
-                document.getElementById('div2').innerHTML = 'touch ended';
-            }
-        
-            //onbeforeunload
-        window.onbeforeunload = function () {
-                return 'You must not leave!!!';
-            }
-                   
-            //event on parent event
-        document.getElementById('outerDiv').onclick = function () {
-                document.getElementById('out').innerHTML = "onclick used correctly";
-            }
-            // turn off d-fault behavior
-        document.getElementById('hello').onclick = function (event) {
-            event.preventDefault();               
-            }
-        //nasty paths
-        
-        //wrong attribute
-        document.getElementById('button').click = function () {
-            document.getElementById('out').innerHTML = "onclick used correctly";
-        }
-        
-        //onunload used instead without correct default behavior (return is for onbeforeunload)
-        window.onunload = function () {
-                return 'You must not leave!!!';
-            }
-            //onload declared before target created
-        }
-    </script>
+	<meta charset="utf-8">
+	<title>CIT 261 - JavaScript Events</title>	
+	
+	<script type="text/javascript">
+		function myFunction(){
+			document.getElementById('p1').innerHTML = "Thanks for clicking me";
+		}
+		
+		function myFunction2(){
+			alert("This is an alert box that appears everytime this page loads");
+		}
+		
+		function myFunction3(){
+			document.getElementById('p2').innerHTML = "Text is blue now!";
+		}
+		
+		function myFunction4(){
+			document.getElementById('p2').innerHTML = "Back in Black!";
+		}
+		
+	</script>
+	
 </head>
 
-<body>
-    <button type="button" id="button">test</button>
-    <div id="out"></div>
-    <img src="http://s3.amazonaws.com/vnn-aws-sites/5192/files/2016/12/7b2a9572a0dd4c95-hockey-with-heart.jpg" alt="hockey" height=200 width=135 id="photo">
-    <p id="img"></p>
-    <div style="height: 200px; background-color: black" id=outerDiv>
-        <img src="https://byui.brightspace.com/d2l/lp/navbars/6606/theme/viewimage/14431/view?v=10.6.0.2348-10" id="pic" alt="this">
-    </div>
-    <a href="http://www.google.com" id=hello>Hello</a>
-    <div id="div2"></div>
-</body>
-
+<body onload="myFunction2()">
+	<header>
+	
+		<h1>CIT 261 - Rex Nesbit</h1>
+		<h2>JavaScript Basics</h2>
+	</header>
+	
+	<div>
+		<h3>JavaScript Events</h3>
+		<h3>onClick:</h3>
+		<button onclick="myFunction()">Click me!</button>
+		<p id="p1"></p>
+		
+		<h3>onLoad:</h3>
+		<p>An Alert appeared</p>
+		
+		<h3>onMouseOver</h3>
+		<p id='p2' onmouseover="style.color='blue', myFunction3();" onmouseout="style.color='black', myFunction4()">Float over me with the mouse!</p>
+		
+		
+	</div>
+	
+	</body>
 </html>
