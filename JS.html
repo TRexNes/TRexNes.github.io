@@ -21,19 +21,34 @@
 			document.getElementById('p2').innerHTML = "Back in Black!";
 		}
 		
+		function myFunction5(element, color){
+			var element = document.getElementById(element);
+			
+			element.style.transition = "width 1s linear 0s, background 1s linear 0s";
+			element.style.background = color;
+		}
+		
 	</script>
-	
+	<style>
+		
+		#div2{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
 </head>
 
 <body onload="myFunction2()">
 	<header>
 	
 		<h1>CIT 261 - Rex Nesbit</h1>
-		<h2>JavaScript Basics</h2>
+		<h2>JavaScript Events</h2>
+	
 	</header>
 	
 	<div>
-		<h3>JavaScript Events</h3>
+		
 		<h3>onClick:</h3>
 		<button onclick="myFunction()">Click me!</button>
 		<p id="p1"></p>
@@ -44,6 +59,9 @@
 		<h3>onMouseOver</h3>
 		<p id='p2' onmouseover="style.color='blue', myFunction3();" onmouseout="style.color='black', myFunction4()">Float over me with the mouse!</p>
 		
+		<h3>onTouchStart</h3>
+		<p>Touch the square to see a transition! It will turn green with a click of the mouse, or blue while using a touch screen!</p>
+		<div id="div2" onclick="myFunction5('div2', 'green')" onTouchStart="myFunction6('div2','blue')"></div>
 		
 	</div>
 	
