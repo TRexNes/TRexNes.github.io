@@ -5,41 +5,53 @@
 	<title>CIT 261 - JavaScript Events</title>	
 	
 	<script type="text/javascript">
-		function myFunction(){
+		function clickMe(){
 			document.getElementById('p1').innerHTML = "Thanks for clicking me";
 		}
 		
-		function myFunction2(){
+		function myAlert(){
 			alert("This is an alert box that appears everytime this page loads");
 		}
 		
-		function myFunction3(){
+		function mouseOver(){
 			document.getElementById('p2').innerHTML = "Text is blue now!";
 		}
 		
-		function myFunction4(){
+		function mouseOut(){
 			document.getElementById('p2').innerHTML = "Back in Black!";
 		}
 		
-		function myFunction5(element, color){
+		function myFunc(element, color){
 			var element = document.getElementById(element);
-			
 			element.style.transition = "width 1s linear 0s, background 1s linear 0s";
+			element.style.background = color;
+		}
+		
+		function transition(element, width, color){
+			var element = document.getElementById(element);
+			element.style.transition = "width 1s linear 0s, background 1s linear 0s";
+			element.style.width = width;
 			element.style.background = color;
 		}
 		
 	</script>
 	<style>
 		
-		#div2{
+		#div1{
 			width: 100px;
 			height: 100px;
 			background: red;
 		}
+		
+		#div2{
+			width: 100px;
+			height: 100px;
+			background: blue;
+		}
 	</style>
 </head>
 
-<body onload="myFunction2()">
+<body onload="myAlert()">
 	<header>
 	
 		<h1>CIT 261 - Rex Nesbit</h1>
@@ -50,20 +62,25 @@
 	<div>
 		
 		<h3>onClick:</h3>
-		<button onclick="myFunction()">Click me!</button>
+		<button onclick="clickMe()">Click me!</button>
 		<p id="p1"></p>
 		
 		<h3>onLoad:</h3>
 		<p>An Alert appeared</p>
 		
 		<h3>onMouseOver</h3>
-		<p id='p2' onmouseover="style.color='blue', myFunction3();" onmouseout="style.color='black', myFunction4()">Float over me with the mouse!</p>
+		<p id='p2' onmouseover="style.color='blue', mouseOver();" onmouseout="style.color='black', mouseOut()">Float over me with the mouse!</p>
 		
-		<h3>onTouchStart</h3>
+		<h3>onCLick and onTouchStart</h3>
 		<p>Touch the square to see a transition! It will turn green with a click of the mouse, or blue while using a touch screen!</p>
-		<div id="div2" onclick="myFunction5('div2', 'green')" onTouchStart="myFunction6('div2','blue')"></div>
+		<div id="div1" onclick="myFunc('div1', 'green')" onTouchStart="myFunc('div1','blue')"></div>
 		
-	</div>
-	
+		
+	<h3>Transitions:</h3>
+		<button onclick="transition('div2', '500px', 'red')">Change</button>
+		<button onclick="transition('div2', '100px', 'blue')">Reverse</button>
+		<br>
+		<div id="div2"></div>
+		</div>
 	</body>
 </html>
