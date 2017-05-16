@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>CIT 261 - CSS3 Animations</title>
+        <meta charset="UTF-8">
+        <style type="text/css">
+          
+        .box{
+                width: 150px;
+                height: 150px;
+                background-color: red;
+                position: relative;
+                /* Safari 4.0 - 8.0 */
+                -webkit-animation-name: move;
+                -webkit-animation-duration: 6s;
+                -webkit-animation-timing-function: ease-in-out;
+                -webkit-animation-delay: 2s;
+                -webkit-animation-iteration-count: infinite;
+                -webkit-animation-direction: alternate;
+                /* Standard syntax */
+                animation-name: move;
+                animation-duration: 6s;
+                animation-timing-function: ease-in-out;
+                animation-delay: 2s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+             
+            }
+            @-webkit-keyframes move {
+                0%   {background-color:blue; left:0px; top:0px;}
+                25%  {background-color:#3FBFB2; left:300px; top:0px;}
+                50%  {background-color:yellowgreen; left:300px; top:300px;}
+                75%  {background-color:yellow; left:0px; top:300px;}
+                100% {background-color:#EA4D14; left:0px; top:0px;}
+                from {-webkit-transform: rotate(0deg);}
+    			to   {-webkit-transform: rotate(360deg);}
+            }
+            @keyframes move {
+                0%   {background-color:blue; left:0px; top:0px;}
+                25%  {background-color:#3FBFB2; left:300px; top:0px;}
+                50%  {background-color:yellowgreen; left:300px; top:300px;}
+                75%  {background-color:yellow; left:0px; top:300px;}
+                100% {background-color:#EA4D14; left:0px; top:0px;}
+    			from {transform:rotate(0deg);}
+    			to {transform:rotate(360deg);}
+			}
+    </style>
+    </head>
+    
+    <body> 
+    <header>
+	<a href="index.html">
+		<h1>CIT 261 - Rex Nesbit</h1>
+	</a>
+	</header>       
+       <h2>CSS3 Animations</h2>
+       <h3>This example of animation uses duration, timing, delay,
+        iteration-count, direction and rotation functions.
+         It does all this while changing color</h3>
+        </br>
+        </br>
+         
+        <div class='box'></div> 
+    
+    </body>
+</html>
