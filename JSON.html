@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CIT 261 - JSON Parse and Stringify</title>
+	<link rel="stylesheet" type="text/css" href="style.css" media="screen">	
+	
+	<script type="text/javascript">
+		var list = new Array();
+		
+		
+		function addList(){
+		
+			list.push(document.getElementById('newArray').value);
+			
+			document.getElementById('newArray').value=''; 
+			document.getElementById('outputDiv').innerHTML = list;
+			
+			var string = JSON.stringify(list);
+			document.getElementById('outputDiv2').innerHTML = string;
+			
+			var object = JSON.parse(string);
+			var length = object.length;
+			var text = " ";
+			
+			for (i = 0; i < length; i++ ) {
+				text += object[i] + " ";
+				
+			
+			}
+			document.getElementById('outputDiv3').innerHTML = text;	
+		}
+		
+	</script>
+	
+</head>
+
+<body>
+	<header>
+	<a href="index.html">
+		<h1>CIT 261 - Rex Nesbit</h1>
+	</a>
+	</header>
+	<div>
+		<h2>JSON: Parse and Stringify</h2>
+		<p>Since JSON uses strings, we need to convert JS objects
+		 into strings to be able to send the information. This is called <b><em>Stringify</em></b>.</p>
+		<p>When we receive the data from JSON, since it is in a string, we need to convert
+		 it into JS objects. This is called <b><em>Parse</em></b>.</p>
+		 </br>
+		 
+		<p>As you add items to the list this example will stringify it to convert it to string,
+		 then use parse to make it usable in JavaScript again.</p>
+		<input type="text" id="newArray"></input>
+		<button onclick="addList()">Add to List</button><br>
+		<h3>Your list:</h3>
+		<div id="outputDiv"></div><br>
+		<h3>Stringify:</h3>
+		<div id="outputDiv2"></div><br>
+		<h3>Parse:</h3>
+		<div id="outputDiv3"></div>
+
+	</div>
+	
+	</body>
+</html>
