@@ -30,7 +30,38 @@
 			}
 			document.getElementById('outputDiv3').innerHTML = text;	
 		}
-		
+		var object = {"Persons":[
+                {"name":"Peter","age":21,"lastname":"Forsberg","occupation":"Hockey Player"},
+                {"name":"Joe","age":19,"lastname":"Sakic","occupation":"Manager"},
+                {"name":"Patrick","age":33,"lastname":"Roy","occupation":"Police"},
+                {"name":"Milan","age":23,"lastname":"Hejduk","occupation":"Lady killer"},
+                {"name":"Chris","age":37,"lastname":"Drury","occupation":"Baseball"},
+                {"name":"Claude","age":22,"lastname":"Lemiuex","occupation":"Fighter"},
+            ]};
+            var i, dis;
+            for(i=0, dis = "";i < object.Persons.length ; i++){
+                dis += i + " - " + object.Persons[i].name + " - " + object.Persons[i].age + '<br>';
+            }
+            document.getElementById('content1').innerHTML = dis;
+            function createJson(){
+                var select = document.getElementById("number").value;
+                var j = 0;
+                if(select => 0 && select <= 6){
+                    for(j=0;j < object.Persons.length ; j++){
+                        if(j == select){
+                            document.getElementById('content').innerHTML = "I'm " + object.Persons[j].name + " " + object.Persons[j].lastname + "." 
+                            + " I'm " + object.Persons[j].age + " years old and my occupation is " + object.Persons[j].occupation;
+                            
+                            ;
+                        }
+                    }
+                }
+                if(select > 6){
+                    var person = {"find":function(){alert("Insert a number between 0 - 6");}
+                    };
+                    persona.find();
+                }
+            }
 	</script>
 	
 </head>
@@ -61,6 +92,19 @@
 		<div id="outputDiv3"></div>
 
 	</div>
-	
+	<div>
+            <p>This example creates a JSON file with the names of several people 
+                and their ages. Using key and value pairs, these names are shown. With a descrtion about each person.</p>
+            <p>0 - Peter - 21 </br>
+			   1 - Joe - 19 </br>
+			   2 - Patrick - 33 </br>
+			   3 - Milan - 23 </br>
+			   4 - Chris - 37 </br>
+			   5 - Claude- 22 </br></p>
+            <p>Select a number : <input name="insertnumber" type="text" id="number" ></p>
+            <input type="button" onclick="createJson()" value="Click for Result" >
+            <h4>Result</h4>
+            <p id="content"></p>
+        </div>
 	</body>
 </html>
