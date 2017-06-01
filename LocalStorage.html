@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CIT 261 - Local Storage API</title>
+	
+	<script type="text/javascript">
+				
+			function story(){
+				var madLib = {
+				
+					"adjective":document.getElementById('adjective').value,
+					"verb":document.getElementById('verb').value,
+					"verb2":document.getElementById('verb2').value,
+					"verb3":document.getElementById('verb3').value,
+					"noun":document.getElementById('noun').value,
+					"noun2":document.getElementById('noun2').value,
+					
+				};
+				localStorage.setItem("story", JSON.stringify(madLib));
+				var retrieveStory = localStorage.getItem("story");
+				var story = JSON.parse(retrieveStory);
+				
+				document.getElementById("outputDiv4").innerHTML = "There once was a " + story.adjective + " man that decided to " + story.verb + ".</br> He also decided to " + story.verb2 + " but it hurt him,</br> so then he " + story.verb3 + " but that scared him. So, he then went fishing to calm himself.</br> After he was calm, he stumbled upon a " + story.noun + " but he thought it was a " + story.noun2 + "</br> and thats why he died.";
+				
+			}
+			
+			function storyLast(){
+				var retrieveStory = localStorage.getItem("story");
+				var story = JSON.parse(retrieveStory);
+				
+				document.getElementById("outputDiv4").innerHTML = "There once was a " + story.adjective + " man that decided to " + story.verb + ".</br> He also decided to " + story.verb2 + " but it hurt him,</br> so then he " + story.verb3 + " but that scared him. So, he then went fishing to calm himself.</br> After he was calm, he stumbled upon a " + story.noun + " but he thought it was a " + story.noun2 + "</br> and thats why he died.";
+			}
+			
+			
+			function styleIt(){
+				var styleArray = {
+					"color":document.getElementById('boxColor').value,
+					"width":document.getElementById('width').value + "px",
+					"height":document.getElementById('height').value + "px",
+					"diameter":document.getElementById('rounded').value + "px",
+					};
+					
+				document.getElementById("storageStyle").style.background = styleArray["color"];
+				document.getElementById("storageStyle").style.width = styleArray["width"];
+				document.getElementById("storageStyle").style.height = styleArray["height"];
+				document.getElementById("storageStyle").style.borderRadius = styleArray["diameter"];
+				
+				localStorage.setItem("style", JSON.stringify(styleArray));
+				}
+				
+			function rememberStyle(){
+				var retrieveStyle = localStorage.getItem("style");
+				var returnedStyle = JSON.parse(retrieveStyle);
+				
+				document.getElementById("storageStyle").style.background = returnedStyle.color;
+				document.getElementById("storageStyle").style.width = returnedStyle.width;
+				document.getElementById("storageStyle").style.height = returnedStyle.height;
+				document.getElementById("storageStyle").style.borderRadius = returnedStyle.diameter;
+			}
+			
+	</script>
+	
+</head>
+
+<body>
+	<header>
+	<a href="main.html">
+		<h1>CIT 261 - Rex Nesbit</h1> </a>
+		<h2>Local Storage API</h2>
+
+	</header>
+	<div class="background">
+		
+		<h3>Madlibs</h3>
+		<p>Let's write a story. Enter the words below and I will take care of the rest. I will even remember the last story entered.<p>
+		<input type="text" id="adjective" placeholder="Adjective"></input><br>
+		<input type="text" id="verb" placeholder="Verb"></input><br>
+		<input type="text" id="verb2" placeholder="Another Verb"></input><br>
+		<input type="text" id="verb3" placeholder="And another Verb"></input><br>
+		<input type="text" id="noun" placeholder="Noun"></input><br>
+		<input type="text" id="noun2" placeholder="Another Noun"></input><br>
+		<button onclick="story()">Write the Story!</button>
+		<button onclick="storyLast()">Remember Previous Story</button>
+		<div id="outputDiv4"></div>
+		
+		
+		
+		<h3>Style</h3>
+		<p>Please stlye a box below. I will make it for you. </p>
+		<input type="text" id="boxColor" placeholder="Color"></input><br>
+		<input type="text" id="width" placeholder="Width"></input><br>
+		<input type="text" id="height" placeholder="Height"></input><br>
+		<input type="text" id="rounded" placeholder="Edge Diameter"></input><br>
+		<button onclick="styleIt()">Style It</button><button onclick="rememberStyle()">Remember Style</button><br><br>
+		<div id="storageStyle"></div>
+
+	</div>
+	
+	</body>
+</html>
