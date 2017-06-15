@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CIT 261 - DOM</title>
+</head>
+
+<body>
+	<header>
+	<a href="index.html">
+		<h1>CIT 261 - Rex Nesbit</h1>
+		</a>
+		<h2>DOM Manipulation</h2>
+	</header>
+	
+	<div>
+				
+		<div id="wyr">
+		<h3>Time for a game!</h3>
+		<h4>Would you rather....</h4>
+		<input type="button" value="Eat a big bug" onclick="bug()" />
+		<input type="button" value= "Break your leg"onclick="leg()" />
+		</div>
+		<div id="show"></div>
+
+	</div>
+	
+	<script type="text/javascript">
+		function bug(){
+		
+		document.getElementById('wyr').innerHTML = "Well, that is wierd. Would you rather..";
+		
+		var btn = document.createElement("BUTTON");
+		var t = document.createTextNode("Sleep all day");
+		btn.appendChild(t);
+		btn.addEventListener ("click", function() {
+				document.getElementById('wyr').innerHTML = "Lazy bum!";
+				});
+		
+		var btn2 = document.createElement("BUTTON");
+		var t = document.createTextNode("Run a marathon");
+		btn2.appendChild(t);
+		btn2.addEventListener ("click", function() {
+				document.getElementById('wyr').innerHTML = "Good for you!";
+				});
+		
+		document.getElementById('show').appendChild(btn); 
+		document.getElementById('show').appendChild(btn2);		
+		}
+		
+		function leg(){
+		
+		document.getElementById('wyr').innerHTML = "Ouch! Would you rather..";
+		
+		var btn = document.createElement("BUTTON");
+		var t = document.createTextNode("Be trapped in a coffin");
+		btn.appendChild(t);
+		btn.addEventListener ("click", function() {
+				document.getElementById('wyr').innerHTML = "Good luck with that";
+				});
+		
+		var btn2 = document.createElement("BUTTON");
+		var t = document.createTextNode("Be abducted");
+		btn2.appendChild(t);
+		btn2.addEventListener ("click", function() {
+				document.getElementById('wyr').innerHTML = "Maybe Liam Neason will save you";
+				});
+		
+		
+		document.getElementById('show').appendChild(btn); 
+		document.getElementById('show').appendChild(btn2);		
+		}	
+			
+	</script>
+	
+	</body>
+</html>
