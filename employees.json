@@ -1,8 +1,8 @@
 {"employees":[
-		{"firstName":"Peter","lastName":"Forsberg","age":21,"occupation":"Hockey Player"},
-		{"firstName":"Joe","lastName":"Sakic","age":19,"occupation":"Manager"},
-                {"firstName":"Patrick","lastName":"Roy","age":33,"occupation":"Police"},
-                {"firstName":"Milan","lastName":"Hejduk","age":23,"occupation":"Lady killer"},
-                {"firstName":"Chris","lastName":"Drury","age":37,"occupation":"Baseball"},
-                {"firstName":"Claude","lastName":"Lemiuex","age":22,"occupation":"Fighter"}
+	{"firstName":"Peter", "lastName":"Forsberg", "age":21, "occupation":"Hockey Player"},
+	{"firstName":"Joe", "lastName":"Sakic", "age":19, "occupation":"Manager"}
+	{"firstName":"Patrick", "lastName":"Roy", "age":33, "occupation":"Police"},
+        {"firstName":"Milan", "lastName":"Hejduk", "age":23, "occupation":"Lady killer"},
+        {"firstName":"Chris", "lastName":"Drury", "age":37, "occupation":"Baseball"},
+        {"firstName":"Claude", "lastName":"Lemiuex", "age":22, "occupation":"Fighter"}
 ]}
