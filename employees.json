@@ -1,8 +1,8 @@
 {"employees":[
-	{"firstName":"Peter", "lastName":"Forsberg", "age":21, "occupation":"Hockey Player"},
-	{"firstName":"Joe", "lastName":"Sakic", "age":19, "occupation":"Manager"}
-	{"firstName":"Patrick", "lastName":"Roy", "age":33, "occupation":"Police"},
-        {"firstName":"Milan", "lastName":"Hejduk", "age":23, "occupation":"Lady killer"},
-        {"firstName":"Chris", "lastName":"Drury", "age":37, "occupation":"Baseball"},
-        {"firstName":"Claude", "lastName":"Lemiuex", "age":22, "occupation":"Fighter"}
+    {"firstName":"Eddie", "lastName":"Pincay", "department":"Sales", "salary":"$ 680"},
+    {"firstName":"Silvia", "lastName":"Moscoso", "department":"Purchases", "salary":"$ 480"},
+    {"firstName":"Julio", "lastName":"Aristega", "department":"Maintenance", "salary":"$ 500"},
+    {"firstName":"Sariah", "lastName":"Matamoros", "department":"Maintenance", "salary":"$ 550"},
+    {"firstName":"Daniela", "lastName":"Pincay", "department":"Manager", "salary":"$ 1500"},
+    {"firstName":"Andres", "lastName":"Carpio", "department":"Sales", "salary":"$ 700"}
 ]}
