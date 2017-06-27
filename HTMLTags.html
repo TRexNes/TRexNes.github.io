@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CIT 261 - HTML5 Tags, Video, Audio, and Canvas</title>
+</head>
+
+<body>
+	<header>
+	<a href="index.html">
+		<h1>CIT 261 - Rex Nesbit</h1>
+	</a>
+	</header>
+	
+	<div class="background">
+	<h2>HTML5 Tags - Video, Audio, and Canvas</h2>
+		<h2>Recovery Chapter One Preview:</h2>
+		<h3>Trailer:</h3>
+		<video width="500px" height="350px" controls>
+			<source src="birds_7.mp4" type="video/mp4">
+			The browser you are using does not support this video tag
+		</video>
+		
+		<h3>Audio sample</h3>
+		<p>Joseph Akins</p>
+		<audio controls>
+		<source src="JosephAkins.mp3" type="audio/mp3">
+		The browser you are using does not support this audio element.
+		</audio>
+
+		
+		<h3>Characters:</h3>
+		<button onclick="charImage(1)">Michele</button>
+		<button onclick="charImage(2)">Zephin</button>
+		
+		<br>
+		<canvas id="characters" width="272" height="288"
+		style="border:1px solid #d3d3d3;">
+		Your browser does not support the HTML5 canvas tag.
+		</canvas>
+		<div style="display:none;">
+			<img id="source1" src="bird.png"
+			width="272" height="288">
+			<img id="source2" src="JosephAkins.png"
+			width="272" height="288">
+		</div>
+		<br>
+		
+		<br>
+		
+		<script type="text/javascript">
+			
+			function charImage(number) { 
+				
+				var canvas = document.getElementById('characters');
+				var ctx2 = canvas.getContext('2d');
+				var image = document.getElementById('source' + number);
+				var sprite = document.getElementById('sprite' + number);
+				ctx2.clearRect(0,0,canvas.width, canvas.height);
+				ctx2.drawImage(image, 0, 0);
+				ctx2.drawImage(sprite, 180, 0);
+			
+			}
+	</script>
+		
+
+	</div>
+	
+	</body>
+</html>
