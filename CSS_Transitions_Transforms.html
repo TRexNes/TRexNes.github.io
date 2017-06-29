@@ -5,38 +5,39 @@
         <meta charset="UTF-8">
         
         <style type="text/css">
-            .droplet {
-                background: chocolate;
-                border-radius: 2% 50%;
-                height: 100px;
-                margin: 100px;
+            .oval {
+                background: green;
+                border-radius: 50% 50%;
+                height: 150px;
+                margin: 50px;
                 transition: all 3s;
-                transition-timing: ease-in-out;
+                transition-timing: linear;
                 width: 100px;
             }
-            .droplet:hover {
-                transform: rotate(1080deg);
+            .oval:hover {
+                transform: rotate(10080deg);
+                width: 300px
             }            
             .square1 {
-                background: #00aa9d;
-                border-radius: 3px;
-                height: 150px;
-                margin: 10px;
+                background: blue;
+                border-radius: 5px;
+                height: 200px;
+                margin: 30px;
                 position: absolute;
-                transition: transform 0.8s;
+                transition: transform 1s;
                 width: 150px;
             }
             .square2 {
-                background: #2b3f53;
-                border-radius: 3px;
-                height: 150px;
-                margin: 10px;
-                transition: transform 0.8s;
+                background: red;
+                border-radius: 5px;
+                height: 200px;
+                margin: 30px;
+                transition: transform 1s;
                 position: absolute;
                 width: 150px;
             }
             .square2:hover {
-                 transform: translate(40px, 40px);
+                transform: rotateY(180deg);
             }
         </style>
     </head>
@@ -51,7 +52,7 @@
         <h2>CSS3 Transitions and Transforms (Designing, Defining, and Triggering without Custom Libraries)</h2>
         
         <h3>Rotate Transition and Transform</h3>
-        <div class="droplet"></div>
+        <div class="oval"></div>
         <h3>Translate Transition and Transform</h3>
         <div class="square1"></div>
         <div class="square2"></div>
