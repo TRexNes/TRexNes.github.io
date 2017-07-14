@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Create MadLib</title>
+	<link href="style.css" rel="stylesheet" type="text/css" media="all"/>
+</head>
+<body>
+	
+	<header>
+	  <div class="header">
+		<h1 id="title">MadLibs</h1> 
+	  </div>
+	</header>
+  
+<h2>Enter your words below and click through the different stories</h2> </brs>
+	<div id="words">	
+	    <input type="text"id="adjective" onclick="aDef()" placeholder="Adjective"><span class="underline"></span></input><br>
+		<input type="text" id="verb" onclick="vDef()" placeholder="Verb"><span class="underline"></span></input><br>
+		<input type="text" id="verb2" placeholder="Another Verb"><span class="underline"></span></input><br>
+		<input type="text" id="verb3" placeholder="And another Verb"><span class="underline"></span></input><br>
+		<input type="text" id="noun" onclick="nDef()" placeholder="Noun"><span class="underline"></span></input><br>
+		<input type="text" id="noun2" placeholder="Another Noun"><span class="underline"></span></input><br>
+		</br>
+
+	</div>	
+		
+	<div id="buttons">
+		<button id="action" onClick="action()">Action</button>
+        <button id="adventure" onClick="adventure()">Adventure</button>
+        <button id="animal" onClick="animal()">Animal</button>
+        <button id="history" onClick="history()">History</button>
+        <button id="mystery" onClick="mystery()">Mystery</button>
+    <button id="remember" onclick="storyLast()">Remember Previous words</button>
+</br>
+</br>
+<div id="outputDiv4"></div>
+	</div>
+
+<div id="outputDiv"></div>
+
+</body>
+
+
+
+
+<script>
+
+
+function aDef() {
+ alert("An adjective is a word that modifies a noun (or pronoun). To make it more specific: a 'rotten' egg, a 'cloudy' day, a 'lovely' lady, or a 'tall,' 'cool' glass of water.") 
+  }
+
+function vDef() {
+   alert("A verb is a word that expresses action or a state of being. To make it more specific: I 'love' cheese, I 'turned' the page, I 'run' outside");
+}
+
+function nDef() {
+alert("A noun is a person, place, thing, quality, or action. To make it more specific: 'John' loves cheese, 'he' wears a 'hat', the 'restaurant' is outside");
+}
+
+
+function action()
+	{
+		var madLib = {
+				
+		"adjective":document.getElementById('adjective').value,
+		"verb":document.getElementById('verb').value,
+		"verb2":document.getElementById('verb2').value,
+		"verb3":document.getElementById('verb3').value,
+		"noun":document.getElementById('noun').value,
+		"noun2":document.getElementById('noun2').value,
+					
+		};
+			localStorage.setItem("story", JSON.stringify(madLib));
+			var retrieveStory = localStorage.getItem("story");
+			var story = JSON.parse(retrieveStory);
+			document.getElementById("outputDiv4").innerHTML = "In a world where a " + story.adjective + " man is set out to " + story.verb + " and discover that " + story.verb2 + " is what he must do to save the world. He must travel back in time to get the " + story.verb3 + " cure. With his best friend " + story.noun + " He must learn that in order to save the world he needs to find out all he can about " + story.noun2 + " .";
+	}
+
+function adventure()
+	{
+		var madLib = {
+				
+		"adjective":document.getElementById('adjective').value,
+		"verb":document.getElementById('verb').value,
+		"verb2":document.getElementById('verb2').value,
+		"verb3":document.getElementById('verb3').value,
+		"noun":document.getElementById('noun').value,
+		"noun2":document.getElementById('noun2').value,
+					
+		};
+			localStorage.setItem("story", JSON.stringify(madLib));
+			var retrieveStory = localStorage.getItem("story");
+			var story = JSON.parse(retrieveStory);
+			document.getElementById("outputDiv4").innerHTML = "The story of the greatest adventure of all time begins with a " + story.adjective + " heart. One must always " + story.verb + " after they meet oposition. This is the story of a girl that never gave up even after she would " + story.verb2 + ". This girl who set out to change the world, would often " + story.verb3 + " with all her friends. Her adventure taught us that we too need to save others and only then will we be like a " + story.noun + ". At least thats what the " + story.noun2 + " says.";
+	}
+
+function animal()
+	{
+		var madLib = {
+				
+		"adjective":document.getElementById('adjective').value,
+		"verb":document.getElementById('verb').value,
+		"verb2":document.getElementById('verb2').value,
+		"verb3":document.getElementById('verb3').value,
+		"noun":document.getElementById('noun').value,
+		"noun2":document.getElementById('noun2').value,
+					
+		};
+			localStorage.setItem("story", JSON.stringify(madLib));
+			var retrieveStory = localStorage.getItem("story");
+			var story = JSON.parse(retrieveStory);
+			document.getElementById("outputDiv4").innerHTML = "My favorite animal is a Dragon. Sometimes they are really smart and cool, other times they are really " + story.adjective + " and dumb. One thing I like about them is that they can fly. Unless they are " + story.verb + ". I always thought it would be cool to ride on the back of a Dragon and be able to see the world and smell the Dragon as he " + story.verb2 + ". I always thought it would be funny if a Dragon could not " + story.verb3 + ". My favorite name for a Dragon is " + story.noun + ". I also want to see a Dragon wearing a " + story.noun2 + ".";
+	}
+	
+function history()
+	{
+		var madLib = {
+				
+		"adjective":document.getElementById('adjective').value,
+		"verb":document.getElementById('verb').value,
+		"verb2":document.getElementById('verb2').value,
+		"verb3":document.getElementById('verb3').value,
+		"noun":document.getElementById('noun').value,
+		"noun2":document.getElementById('noun2').value,
+					
+		};
+			localStorage.setItem("story", JSON.stringify(madLib));
+			var retrieveStory = localStorage.getItem("story");
+			var story = JSON.parse(retrieveStory);
+			document.getElementById("outputDiv4").innerHTML = "My favorite war to study and learn about is WWII. I really like the " + story.adjective + " planes and ships. And how amazing is it that the lessons that we can learn from all the " + story.verb + " soliders and tactics during that time? My Grandpa served on the USS Enterprise which was a " + story.verb2 + " aircraft carrier that was involved in every major battle in the Pacific. The stories told about the great ship and crew are so cool and they can be related to us today as we " + story.verb3 + ".It is also my favorite war in history because of the " + story.noun + "s and they way that they wore their " + story.noun2 + ". It was a crazy time to be alive and had such a great influence on us today.";
+	}
+
+function mystery()
+	{
+		var madLib = {
+				
+		"adjective":document.getElementById('adjective').value,
+		"verb":document.getElementById('verb').value,
+		"verb2":document.getElementById('verb2').value,
+		"verb3":document.getElementById('verb3').value,
+		"noun":document.getElementById('noun').value,
+		"noun2":document.getElementById('noun2').value,
+					
+		};
+			localStorage.setItem("story", JSON.stringify(madLib));
+			var retrieveStory = localStorage.getItem("story");
+			var story = JSON.parse(retrieveStory);
+			document.getElementById("outputDiv4").innerHTML = "Unsolved mysteries are something that I find interesting. Hearing the " + story.adjective + " stories can give me the chills. One that I enjoy the most involves a guy that would often " + story.verb + " one people. The authorities never figured out how he did it, but they were scared that he would never stop. So Joe Sakic of the FBI had a thought of how to stop him while he was " + story.verb2 + ". As Joe explained his plan to his colleagues, he was met with laughter. they thought that Joe should " + story.verb3 + ". They didnt know that Joe was stuck inside a very small " + story.noun + ". So Joe tried to stop the man himself and was never seen again. Some say that Joe was the man. Others are convinced that he was killed with a " + story.noun2 + ". Either way, we will never know.";
+	}
+
+function storyLast(){
+				var retrieveStory = localStorage.getItem("story");
+				var story = JSON.parse(retrieveStory);
+				
+				document.getElementById("outputDiv4").innerHTML = "</br>" + story.adjective + "</br>"+ story.verb + "</br>" + story.verb2 + "</br>"+ story.verb3 + "</br>" + story.noun + "</br>" + story.noun2 + "</br>";
+			}
+
+
+document.addEventListener('DOMContentLoaded',function(event){
+
+  var dataText = [ "Mad Creative", "Mad Fun", "Mad Libs"];
+  
+ 
+  function typeWriter(text, i, fnCallback) {
+   
+    if (i < (text.length)) {
+      
+     document.querySelector("h1").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
+
+     
+      setTimeout(function() {
+        typeWriter(text, i + 1, fnCallback)
+      }, 100);
+    }
+    
+    else if (typeof fnCallback == 'function') {
+      
+      setTimeout(fnCallback, 700);
+    }
+  }
+  
+   function StartTextAnimation(i) {
+     if (typeof dataText[i] == 'undefined'){
+        setTimeout(function() {
+          StartTextAnimation(0);
+        }, 20000);
+     }
+     
+    if (i < dataText[i].length) {
+      
+     typeWriter(dataText[i], 0, function(){
+       
+       StartTextAnimation(i + 1);
+     });
+    }
+  }
+  
+  StartTextAnimation(0);
+});
+</script>
